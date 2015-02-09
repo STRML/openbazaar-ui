@@ -84,8 +84,14 @@ WS_PORT=<websocket port> npm install && bower install && gulp
 
 ## Known Issues
 
-- Random freeze, not sure if specific to my OS / setup
+- Random app freeze, not sure if specific to my OS / setup
 - Lots of unfinishedness
+- Stuff needs to be moved into directives and services/factories
+- Inconsistent file naming patterns, coding style
+  - Maybe a styleguide based on google/twitter guides?
+- Left over code litter
+- Little to no comments
+- Perhaps to complex of structure?
 
 ## License
 (ISC)
