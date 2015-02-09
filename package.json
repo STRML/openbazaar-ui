@@ -1,0 +1,86 @@
+{
+  "name": "openbazaar-client",
+  "main": "dist/index.html",
+  "window": {
+    "icon": "dist/images/icon.png",
+    "title": "OpenBazaar",
+    "toolbar": false,
+    "frame": false,
+    "width": 900,
+    "height": 650,
+    "min_width": 900,
+    "min_height": 480,
+    "transparent": true,
+    "show": false
+  },
+  "devDependencies": {
+    "browserify": "^8.1.3",
+    "browserify-shim": "^3.8.2",
+    "gulp": "^3.8.10",
+    "gulp-concat": "^2.4.3",
+    "gulp-copy": "0.0.2",
+    "gulp-embedlr": "^0.5.2",
+    "gulp-jade": "^0.11.0",
+    "gulp-livereload": "^3.7.0",
+    "gulp-replace": "^0.5.2",
+    "gulp-sass": "^1.3.2",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-util": "^3.0.3",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.3.0"
+  },
+  "browser": {
+    "jquery": "./src/vendor/jquery/dist/jquery.js",
+    "angular": "./src/vendor/angular/angular.js",
+    "ngRoute": "./src/vendor/angular-route/angular-route.js",
+    "ngRouteSegment": "./src/vendor/angular-route-segment/build/angular-route-segment.js",
+    "ngAnimate": "./src/vendor/angular-animate/angular-animate.js",
+    "ngOffCanvas": "./src/vendor/angular-off-canvas/off-canvas.js",
+    "bootstrap": "./src/vendor/angular-bootstrap/ui-bootstrap.js",
+    "bootstrap-tpls": "./src/vendor/angular-bootstrap/ui-bootstrap-tpls.js",
+    "pnglib": "./src/vendor/js/pnglib.js",
+    "identicon": "./src/vendor/js/identicon.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "angular": "angular",
+    "ngRoute": {
+      "depends": "angular"
+    },
+    "ngRouteSegment": {
+      "depends": "angular"
+    },
+    "ngAnimate": {
+      "depends": "angular"
+    },
+    "ngScrollbar": {
+      "depends": "angular"
+    },
+    "bootstrap": {
+      "depends": [
+        "angular",
+        "jquery"
+      ]
+    },
+    "bootstrap-tpls": {
+      "depends": [
+        "angular",
+        "jquery"
+      ]
+    },
+    "identicon": {
+      "exports": "Identicon",
+      "depends": "pnglib"
+    }
+  },
+  "dependencies": {
+    "lodash": "^3.1.0",
+    "tail": "^0.4.0"
+  }
+}

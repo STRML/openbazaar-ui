@@ -1,0 +1,66 @@
+.my-market
+	.backdrop
+		//- img(src='http://i.imgur.com/9XmYezj.jpg')
+
+	.row.section-header.pinned
+		.col-sm-6.section-title
+			h2 My Market
+		.col-sm-6.section-controls
+			button.btn.btn-sm Trust Notary
+			| 
+			button.btn.btn-sm.text-success: strong Trusted Arbiter
+			| 
+			button.btn.btn-primary.btn-sm Send Message
+
+	.row
+		.col-sm-12
+			h1 Home Grown Coffee 
+				small {{ guid | uppercase }}
+
+		.col-sm-12
+			.block-shade
+				//- identicon.pull-right(icon-size='85' hash='guid')
+				p At Home Grown Coffee, we treat our beans right. We accept only the highest-quality beans, and craft roast every batch to bring you the finest coffees. Learn how to make the smoothest, best-tasting cup of coffee in the neighborhood. 
+				hr
+				table.table.product-table
+					thead
+						tr
+							th Contract Title
+							th Description
+							th Price
+					tbody
+						tr
+							td.title Starlight Blend
+							td
+								.short Beaming with hints of maple candy and ripe berries grounded by heavy body and flavors of toasted grains, malt and nuts.
+							td.price 
+								i.mdi.mdi-currency-btc
+								| 0.08 
+						tr
+							td.title Guatemala El Paraiso
+							td
+								.short El Paraiso 'Paradise' is a perfect name for the beautiful valley in Huehuetenango, Guatemala. It's known as one of the premier coffee-growing regions in the world.
+							td.price 
+								i.mdi.mdi-currency-btc
+								| 0.08 
+						tr
+							td.title Daybreak Blend Decaf
+							td
+								.short The perfect pick-me-up whether it's morning or evening. Cheering and sweet, it leaves a quiet hint of fruit and nuts after each sip.
+							td.price 
+								i.mdi.mdi-currency-btc
+								| 0.07 
+						tr
+							td.title Daybreak Blend
+							td
+								.short The perfect pick-me-up whether it's morning or evening. Cheering and sweet, it leaves a quiet hint of fruit and nuts after each sip.
+							td.price 
+								i.mdi.mdi-currency-btc
+								| 0.07
+						tr
+							td.title Colombia Coschecha De Oro
+							td
+								.short Our most recent offering from the beautiful country of Colombia, Cosecha de Oro (which means crop of gold and is what coffee is called when it is prepared), comes from the towns of Sotomayor and La Union in the Southern state of Nari
+							td.price 
+								i.mdi.mdi-currency-btc
+								| 0.07 

@@ -1,0 +1,33 @@
+.row.section-header
+	.col-sm-6.section-title
+		h2 Messages
+	.col-sm-6.section-controls
+		button.btn.btn-primary.btn-sm Compose
+.row
+	.col-sm-12
+		table.table.table-hover.messages
+			tbody
+				tr.unread(ng-click='open()')
+					td.from OpenBazaar
+					td.subject
+						| OpenBazaar 0.5 Release
+						span.preview  -
+							| Welcome You are now ready to join  
+					td.date
+						| 12:30 am
+				tr
+					td.from Shop Name
+					td.subject
+						| Quasi nostrum illo 
+						span.preview  -
+							|  dignissimos facere optio ut blanditiis... 
+					td.date
+						| Jan 20
+				tr
+					td.from OpenBazaar
+					td.subject
+						| Welcome to OpenBazaar
+						span.preview  -
+							|  Here's how you get started with... 
+					td.date
+						| 12/30/14

@@ -1,0 +1,146 @@
+.sidebar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 50px;
+	-webkit-user-select: none;
+	// display: flex;
+	// align-items: center;
+	z-index: 9991;
+
+	background-color: $md-blue-900;
+	// border-right: 1px $md-blue-100 solid;
+
+	.search {
+		position: relative;
+	}
+
+	label {
+		display: inline-block;
+		height: 50px;
+		width: 50px;
+		padding: 0 15px;
+		line-height: 50px;
+		vertical-align: top;
+		font-size: 24px;
+		font-weight: 400;
+		cursor: pointer;
+		transition: all 250ms ease-in-out;
+		color: #fff;
+		background-color: $md-blue-900;
+		overflow-x: hidden;
+		margin: 0;
+
+		&:hover {
+			background: rgba(255,255,255,0.1);
+			// color: transparentize($md-blue-900, 0.2);
+		}
+
+		&.active {
+			background: #fff;
+			color: transparentize($md-blue-900, 0.2);
+		}
+	}
+
+	input {
+		border: 0;
+		border-bottom: 1px transparent solid;
+		margin: 10px 0 10px 15px;
+		height:30px;
+		line-height: 30px;
+		width: 0px;
+		vertical-align: top;
+		font-size: 16px;
+		transition: all 250ms ease-in-out;
+		color: #444;
+		background: #fff;
+		opacity: 0;
+		position: absolute;
+		left: 50px;
+		&::-webkit-input-placeholder {
+			color: #ccc;
+			transition: color 250ms ease-in-out;
+		}
+
+		&:focus {
+			outline: none;
+			opacity: 1;
+		}
+
+		&.active {
+			cursor: default;
+			width: 250px;
+
+			&::-webkit-input-placeholder {
+				color: #888;
+			}
+		}
+	}
+
+
+	.sidebar-nav {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		i {
+			font-size: 24px;
+		}
+
+		&.sidebar-nav-bottom {
+			position: absolute;
+			bottom: 0;
+
+			> li {
+				border-bottom: 0;
+				border-top: 1px $md-blue-100 solid;
+
+					&:first-of-type {
+						border-top: 1px $md-blue-100 solid;
+						&.active {
+							border-top: 1px $md-blue-100 solid;
+						}
+					}
+			}
+		}
+
+		> li {
+			padding: 0;
+			// border-bottom: 1px $md-blue-100 solid;
+
+			&:first-of-type {
+				// border-top: 1px #ccc solid;
+				&.active {
+					// border-top: 1px #ccc solid;
+				}
+			}
+
+			> a {
+				display: inline-block;
+				color: #fff;
+				height: 50px;
+				width: 50px;
+				line-height: 50px;
+				text-align: center;
+				font-size: 24px;
+				transition: color 250ms ease-in-out;
+				text-decoration: none;
+				width: 50px;
+				transition: all 250ms ease-in-out;
+
+				&:hover {
+					color: #fff;
+					background-color: rgba(255,255,255,0.1);
+				}
+			}
+
+			&.active {
+				> a {
+					color: transparentize($md-blue-900, 0.2);
+					background-color: rgba(255,255,255,1);
+				}
+			}
+		}
+	}
+}

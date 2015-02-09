@@ -1,0 +1,6 @@
+src/components
+node_modules
+dist
+nw
+src/vendor/*
+!src/vendor/js
