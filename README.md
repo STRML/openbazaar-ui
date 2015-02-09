@@ -16,6 +16,9 @@ This is still heavily under development, only a small portion ties into the Open
 
 ### OB ws.py check_origin override
 
+This bypasses the origin check in tornado's WebSocketHandler so that the nw app 
+can communicate with OpenBazaar.
+
 - Stop your OpenBazaar node
 - Apply the changes to [ws.py](https://github.com/OpenBazaar/OpenBazaar/blob/develop/node/ws.py#L1160) below
 - Start OpenBazaar node and make note of the web server port (i.e. 127.0.0.1:**56573**)
