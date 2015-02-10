@@ -29,9 +29,9 @@ can communicate with OpenBazaar.
 --- a/node/ws.py
 +++ b/node/ws.py
 @@ -1158,3 +1158,8 @@ class WebSocketHandler(tornado.websocket.WebSocketHandler):
-             self.loop.current().add_callback(send_response)
-         except Exception:
-             logging.error("Error adding callback", exc_info=True)
+						 self.loop.current().add_callback(send_response)
+				 except Exception:
+						 logging.error("Error adding callback", exc_info=True)
 +
 +    # overwrite tornado.websocket.WebSocketHandler's check_origin
 +    # https://github.com/tornadoweb/tornado/blob/master/tornado/websocket.py#L311
@@ -61,27 +61,27 @@ WS_PORT=<websocket port> npm install && bower install && gulp
 ## Project structure
 
 ```
-- dist/ <- compiled output
+- dist/ 						<- compiled output
 - src/
-  - fonts/ <- web fonts from brick.im
-  - images/ <- logos, icons and svg loaders
-  - js/
-    - controllers/
-      - App.js <- (as AppController in angular)
-      - ...
-    - directives/
-    - services/
-    - app.js <- main js file
-  - scss/
-    - app.scss <- main scss file
-    - _(.*).scss <- attempt at breaking up styles
-  - vendor/
-    - js/ <- js libraries not on bower
-    - ... components installed by bower
-  - views/
-    - includes/
-    - templates/
-    - index.jade
+	- fonts/ 					<- web fonts from brick.im
+	- images/ 					<- logos, icons and svg loaders
+	- js/
+		- controllers/
+			- App.js 			<- (as AppController in angular)
+			- ...
+		- directives/
+		- services/
+		- app.js 				<- main js file
+	- scss/
+		- app.scss 				<- main scss file
+		- _(.*).scss 			<- attempt at breaking up styles
+	- vendor/
+		- js/ 					<- js libraries not on bower
+		- ... 					<- components installed by bower
+	- views/
+		- includes/
+		- templates/
+		- index.jade
 ```
 
 ## Known Issues
@@ -90,7 +90,7 @@ WS_PORT=<websocket port> npm install && bower install && gulp
 - Lots of unfinishedness
 - Stuff needs to be moved into directives and services/factories
 - Inconsistent file naming patterns, coding style
-  - Maybe a styleguide based on google/twitter guides?
+	- Maybe a styleguide based on google/twitter guides?
 - Left over code litter
 - Little to no comments
 - Perhaps to complex of structure?
