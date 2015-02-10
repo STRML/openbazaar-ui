@@ -11,17 +11,20 @@ var concat = require('gulp-concat');
 var replace = require('gulp-replace');
 var sourcemaps = require('gulp-sourcemaps');
 var livereload = require('gulp-livereload');
+var rename = require('gulp-rename');
+var webserver = require('gulp-webserver');
 
 // browserify
 var watchify = require('watchify');
 var buffer = require('vinyl-buffer');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
-var bundler = browserify('./src/js/app.js', {
+var nwBundler = browserify('./src/js/app.js', {
 	insertGlobals: false,
 	detectGlobals: false,
 	builtins: []
 });
+var browserBundler = browserify('./src/js/app.js');
 
 var path = {
 	scss: 'src/scss/app.scss',
@@ -43,13 +46,33 @@ var path = {
 var nwProc;
 
 // compile js with browserify
-gulp.task('scripts', bundle);
+gulp.task('scripts', bundle.bind(null, nwBundler, 'app.js'));
+gulp.task('scripts-browser', bundle.bind(null, browserBundler, 'app-browser.js'));
 
 // compile view templates with jade
 gulp.task('views', function () {
 	return gulp.src(['src/views/{index.jade,templates/**/*.jade}'])
 		.pipe(jade({
-			locals: {dev: (process.env.NODE_ENV !== 'production')}
+			locals: {
+				dev: (process.env.NODE_ENV !== 'production'),
+				nw: true
+			}
+		}))
+		.pipe(gulp.dest('dist'))
+		.pipe(livereload());
+});
+
+// Recompile views for browser dev (outside nw)
+gulp.task('views-browser', function () {
+	return gulp.src(['src/views/{index.jade,templates/**/*.jade}'])
+		.pipe(jade({
+			locals: {
+				dev: (process.env.NODE_ENV !== 'production'),
+				nw: false
+			}
+		}))
+		.pipe(rename(function(path) {
+			path.basename += '-browser';
 		}))
 		.pipe(gulp.dest('dist'))
 		.pipe(livereload());
@@ -87,17 +110,32 @@ gulp.task('web-fonts', function () {
 gulp.task('watch', ['default'], function () {
 	// watchify(bundler).on('update', bundle);
 	livereload.listen();
-	launchNw();
 
 	gulp.watch('src/js/**/*.js', ['scripts']);
-	gulp.watch('src/views/**/*.jade', ['views']);
+	gulp.watch('src/views/**/*.jade', ['views', 'views-browser']);
 	gulp.watch('src/scss/**/*.scss', ['styles']);
+});
+
+gulp.task('nw-dev', ['watch'], function() {
+	launchNw();
+});
+
+gulp.task('browser-dev', ['watch'], function() {
+	gulp.src('dist')
+  .pipe(webserver({
+  	// This puts us in html5Mode (pushState)
+    fallback: 'index-browser.html',
+    port: 25625,
+    open: 'http://localhost:25625/index-browser.html'
+  }));
 });
 
 gulp.task('default', [
 	'styles', 
 	'views', 
+	'views-browser', 
 	'scripts', 
+	'scripts-browser', 
 	'web-fonts',
 	'icon-fonts',
 ], function () {
@@ -118,10 +156,10 @@ function launchNw() {
 	});
 }
 
-function bundle() {
+function bundle(bundler, fileName) {
 	return bundler.bundle()
 		.on('error', gutil.log.bind(gutil, 'Browserify Error'))
-		.pipe(source('app.js'))
+		.pipe(source(fileName))
 		.pipe(replace(/\%WS_PORT\%/g, process.env.WS_PORT || '56573'))
 		.pipe(buffer())
 		.pipe(sourcemaps.init({loadMaps: true}))

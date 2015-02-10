@@ -1,6 +1,8 @@
 var _ = require('lodash');
 var $ = require('jquery');
 
+var win = window.win;
+
 module.exports = [
   '$scope',
   '$location',
@@ -10,20 +12,27 @@ module.exports = [
   'Peers',
   'Status',
   function ($scope, $location, $http, $timeout, Socket, Peers, Status) {
-    var gui = window.gui;
-    var win = window.win;
-    gui.Window.get().show();
+    if (win) {
+      // Show window in nw.js
+      win.show();
+    }
     $('body').addClass('loaded');
     $scope.status = Status.get();
 
     $scope.minimize = function () {
-      gui.Window.get().minimize();
+      if(win) {
+        win.minimize();
+      }
     };
     $scope.maximize = function () {
-      gui.Window.get().maximize();
+      if (win) {
+        win.maximize();
+      }
     };
     $scope.close = function () {
-      gui.Window.get().close();
+      if (win) {
+        win.close();
+      }
     };
 
     $scope.page = {

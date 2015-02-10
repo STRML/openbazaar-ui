@@ -11,12 +11,17 @@ html(ng-controller='AppController as app')
 		.content
 			.container-fluid.content-container.fadeOut(app-view-segment='0')
 
-		script.
-			window.gui = require('nw.gui');
-			var win = gui.Window.get();
-			win.setTransparent(!win.isTransparent);
+		//- Node-webkit build
+		if nw === true
+			script.
+				window.gui = require('nw.gui');
+				window.win = gui.Window.get();
+				win.setTransparent(!win.isTransparent);
 		if dev === true
-			script(src='js/app.js')
+			if nw === true
+				script(src='js/app.js')
+			else
+				script(src='js/app-browser.js')
 			script(src='http://localhost:35729/livereload.js?snipver=1')
 		else
 			script(src='js/app.min.js')

@@ -8,8 +8,6 @@ require('bootstrap');
 require('bootstrap-tpls');
 require('identicon');
 
-window.win = window.gui.Window.get();
-
 var app = angular.module('obApp', [
 	'ngRoute',
 	'ngAnimate',
