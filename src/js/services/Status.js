@@ -22,7 +22,7 @@ module.exports = [
 		this.end = function (task) {
 			status.tasks.splice(status.tasks.indexOf(task), 1);
 			status.text = humanList();
-			if (!tasks.length) {
+			if (!status.tasks.length) {
 				status.running = false;
 			}
 		};

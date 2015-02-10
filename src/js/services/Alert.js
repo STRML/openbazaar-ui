@@ -12,6 +12,6 @@ module.exports = [
 
 		this.get = function () {
 			return alerts;
-		}
+		};
 	}
 ];

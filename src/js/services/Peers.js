@@ -10,6 +10,6 @@ module.exports = [
 
 		this.get = function () {
 			return peers;
-		}
+		};
 	}
 ];
