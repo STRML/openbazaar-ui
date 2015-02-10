@@ -10,11 +10,23 @@ This is still heavily under development, only a small portion ties into the Open
 
 - [nw.js](http://nwjs.io) v0.12.0
 - [node.js](https://nodejs.org) & npm
-- bower `sudo npm i -g bower`
-- gulp `sudo npm -i g gulp`
+- bower `npm i -g bower`
+- gulp `npm i -g gulp`
 - OB ws.py check_origin override
 
 ## Installation
+
+### Setting the Websocket Port
+
+When OpenBazaar opens, it will print a port. For example:
+
+```
+{'nat_type': 'Symmetric NAT', 'external_ip': '110.77.235.189', 
+'external_port': 29865}
+```
+
+This UI needs to know which port to connect to. Take note of this port - it will
+be used as the `WS_PORT` env var when building, as seen below.
 
 ### OB ws.py check_origin override
 
@@ -56,6 +68,19 @@ WS_PORT=<websocket port> npm install && bower install && gulp
 
 # change this to point to your nw.js
 /path/to/openbazaar-ui/nw/nw .
+```
+
+### Running in Browser instead of nw.js
+
+You might want to debug in a normal browser instead of running nw.js. 
+To do this:
+
+```shell
+# Fill in WS_PORT from OpenBazaar. See above.
+# `browser-dev` will compile files for the browser, and open your 
+# default browser to the correct host and port.
+WS_PORT=<websocket port> gulp browser-dev
+
 ```
 
 ## Project structure
