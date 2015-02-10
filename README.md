@@ -2,6 +2,8 @@
 
 This is still heavily under development, only a small portion ties into the OpenBazaar node. Create an issue with any bugs you find and feel free to contribute.
 
+[Video demo](http://codepen.io/overra/full/971d031b40fd8492854ff5f0ba71335a/)
+
 ![](https://cldup.com/tViN1lsGal-3000x3000.png)
 
 ## Requirements
