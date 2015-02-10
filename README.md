@@ -64,7 +64,7 @@ mkdir nw
 # you should be able to `gulp watch` -- need osx support
 # 
 # WS_PORT=56573
-WS_PORT=<websocket port> npm install && bower install && gulp
+./configure.sh ob_port
 
 # change this to point to your nw.js
 /path/to/openbazaar-ui/nw/nw .
