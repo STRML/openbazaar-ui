@@ -1,6 +1,6 @@
 module.exports = [
-	'$scope',
-	function ($scope) {
+  '$scope',
+  function ($scope) {
 
-	}
+  }
 ];

@@ -9,6 +9,6 @@ module.exports = [
 
 		this.get = function () {
 			return messages;
-		}
+		};
 	}
 ];

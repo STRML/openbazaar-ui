@@ -6,5 +6,5 @@ module.exports = ['$timeout', function($timeout) {
         $element[0].focus();
       });
     }
-  }
+  };
 }];

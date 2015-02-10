@@ -1,22 +1,22 @@
 // gulp & utils
-var gulp = require('gulp')
-var gutil = require('gulp-util')
+var gulp = require('gulp');
+var gutil = require('gulp-util');
 var spawn = require('child_process').spawn;
 
 // gulp plugins
-var copy = require('gulp-copy')
-var jade = require('gulp-jade')
-var sass = require('gulp-sass')
-var concat = require('gulp-concat')
-var replace = require('gulp-replace')
-var sourcemaps = require('gulp-sourcemaps')
-var livereload = require('gulp-livereload')
+var copy = require('gulp-copy');
+var jade = require('gulp-jade');
+var sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var replace = require('gulp-replace');
+var sourcemaps = require('gulp-sourcemaps');
+var livereload = require('gulp-livereload');
 
 // browserify
-var watchify = require('watchify')
-var buffer = require('vinyl-buffer')
-var browserify = require('browserify')
-var source = require('vinyl-source-stream')
+var watchify = require('watchify');
+var buffer = require('vinyl-buffer');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
 var bundler = browserify('./src/js/app.js', {
 	insertGlobals: false,
 	detectGlobals: false,
@@ -37,13 +37,13 @@ var path = {
 	images: {
 		loaders: 'src/vendor/svg-loaders/svg-loaders/*.svg'
 	}
-}
+};
 
 // node webkit
 var nwProc;
 
 // compile js with browserify
-gulp.task('scripts', bundle)
+gulp.task('scripts', bundle);
 
 // compile view templates with jade
 gulp.task('views', function () {
@@ -52,15 +52,15 @@ gulp.task('views', function () {
 			locals: {dev: (process.env.NODE_ENV !== 'production')}
 		}))
 		.pipe(gulp.dest('dist'))
-		.pipe(livereload())
-})
+		.pipe(livereload());
+});
 
 // compile css with sass
 gulp.task('scss', function () {
 	return gulp.src(path.scss)
 		.pipe(sass())
-		.pipe(gulp.dest('dist/css'))
-})
+		.pipe(gulp.dest('dist/css'));
+});
 
 // combine compiled sass with plain css
 gulp.task('styles', ['scss'], function () {
@@ -68,31 +68,31 @@ gulp.task('styles', ['scss'], function () {
 		.pipe(concat('app.css'))
 		.pipe(replace(/\(fonts\//g, '(../fonts/'))
 		.pipe(gulp.dest('dist/css'))
-		.pipe(livereload())
-})
+		.pipe(livereload());
+});
 
 // copy icon fonts
 gulp.task('icon-fonts', function () {
 	return gulp.src(path.fonts.icon)
-		.pipe(copy('dist/fonts', {prefix: 4}))
-})
+		.pipe(copy('dist/fonts', {prefix: 4}));
+});
 
 // copy web fonts
 gulp.task('web-fonts', function () {
 	return gulp.src(path.fonts.web)
-		.pipe(copy('dist/fonts', {prefix: 2}))
-})
+		.pipe(copy('dist/fonts', {prefix: 2}));
+});
 
 // watch for source changes
 gulp.task('watch', ['default'], function () {
 	// watchify(bundler).on('update', bundle);
-	livereload.listen()
+	livereload.listen();
 	launchNw();
 
-	gulp.watch('src/js/**/*.js', ['scripts'])
-	gulp.watch('src/views/**/*.jade', ['views'])
-	gulp.watch('src/scss/**/*.scss', ['styles'])
-})
+	gulp.watch('src/js/**/*.js', ['scripts']);
+	gulp.watch('src/views/**/*.jade', ['views']);
+	gulp.watch('src/scss/**/*.scss', ['styles']);
+});
 
 gulp.task('default', [
 	'styles', 
@@ -102,8 +102,8 @@ gulp.task('default', [
 	'icon-fonts',
 ], function () {
 	return gulp.src('src/images/*')
-		.pipe(copy('dist/images', {prefix: 2}))
-})
+		.pipe(copy('dist/images', {prefix: 2}));
+});
 
 function launchNw() {
 	if (nwProc) {
@@ -127,5 +127,5 @@ function bundle() {
 		.pipe(sourcemaps.init({loadMaps: true}))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('dist/js'))
-		.pipe(livereload())
+		.pipe(livereload());
 }

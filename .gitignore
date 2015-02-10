@@ -4,3 +4,4 @@ dist
 nw
 src/vendor/*
 !src/vendor/js
+npm-debug.log
