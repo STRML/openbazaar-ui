@@ -1,12 +1,10 @@
 // Core variables and mixins
 @import "theme";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
-
 // Reset and dependencies
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/normalize";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/print";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/glyphicons";
-
 // Core CSS
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/scaffolding";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/type";
@@ -15,7 +13,6 @@
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/tables";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/forms";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/buttons";
-
 // Components
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/component-animations";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/dropdowns";
@@ -38,13 +35,11 @@
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/responsive-embed";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/wells";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/close";
-
 // Components w/ JavaScript
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/modals";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/tooltip";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/popovers";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/carousel";
-
 // Utility classes
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/utilities";
 @import "../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap/responsive-utilities";

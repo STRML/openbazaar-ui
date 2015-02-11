@@ -1,90 +1,88 @@
 .topbar {
-	position: fixed;
-	top: 0;
-	left: 50px;
-	right: 15px;
-	height: 50px;
-	background-color: rgba(255,255,255,1);
-	-webkit-user-select: none;
-	// border-bottom: 1px #ccc solid;
-	z-index: 9990;
-	padding-right: 35px;
-	border-bottom: 1px #f4f4f4 solid;
-	-webkit-app-region: drag;
+    position: fixed;
+    top: 0;
+    left: 50px;
+    right: 15px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 1);
+    -webkit-user-select: none;
+    z-index: 9990;
+    padding-right: 35px;
+    border-bottom: 1px #f4f4f4 solid;
+    -webkit-app-region: drag;
 
-	.logo {
-		display: block;
-		height: 50px;
-		margin-left: 30px;
-		font-size: 24px;
-		font-style: italic;
-		font-weight: 400;
-		// text-align: center;
-		line-height: 50px;
-		color: $md-blue-500;
+    .logo {
+        display: block;
+        height: 50px;
+        margin-left: 30px;
+        font-size: 24px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 50px;
+        color: $md-blue-500;
 
-		strong {
-			color: $md-blue-900;
-			font-weight: 800;
-		}
-	}
+        strong {
+            color: $md-blue-900;
+            font-weight: 800;
+        }
+    }
 
-	.status {
-		position: absolute;
-		top: 0;
-		right: 5px;
-		line-height: 50px;
-		color: $md-blue-500;
-		font-style: italic;
-		font-size: 12px;
+    .status {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        line-height: 50px;
+        color: $md-blue-500;
+        font-style: italic;
+        font-size: 12px;
 
-		img {
-			width: 24px;
-			margin-left: 5px;
-			transform: rotate(90deg);
-		}
-	}
+        img {
+            width: 24px;
+            margin-left: 5px;
+            transform: rotate(90deg);
+        }
+    }
 
-	&:hover .controls,
-	&:hover .shade {
-		opacity: 1;
-	}
+    &:hover .controls,
+    &:hover .shade {
+        opacity: 1;
+    }
 
-	.shade {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 10px;
-		height: 50px;
-		opacity: 0;
-		transition: opacity 250ms ease-in-out;
-		background-color: rgba(255,255,255,0.9);
-		pointer-events: none;
-	}
+    .shade {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 10px;
+        height: 50px;
+        opacity: 0;
+        transition: opacity 250ms ease-in-out;
+        background-color: rgba(255, 255, 255, 0.9);
+        pointer-events: none;
+    }
 
-	.controls {
-		position: absolute;
-		top: 0;
-		right: 30px;
-		line-height: 50px;
-		opacity: 0;
-		transition: opacity 250ms ease-in-out;
-		background-color: rgba(255,255,255,0.9);
-		text-align: right;
-		-webkit-app-region: no-drag;
+    .controls {
+        position: absolute;
+        top: 0;
+        right: 30px;
+        line-height: 50px;
+        opacity: 0;
+        transition: opacity 250ms ease-in-out;
+        background-color: rgba(255, 255, 255, 0.9);
+        text-align: right;
+        -webkit-app-region: no-drag;
 
-		i {
-			display: inline-block;
-			width: 30px;
-			font-size: 24px;
-			text-align: center;
-			cursor: pointer;
-			transition: all 250ms ease-in-out;
-			color: $md-blue-900;
+        i {
+            display: inline-block;
+            width: 30px;
+            font-size: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 250ms ease-in-out;
+            color: $md-blue-900;
 
-			&:hover {
-				color: $md-blue-500;
-			}
-		}
-	}
+            &:hover {
+                color: $md-blue-500;
+            }
+        }
+    }
 }

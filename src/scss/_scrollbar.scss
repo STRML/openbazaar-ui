@@ -2,17 +2,13 @@
 ::-webkit-scrollbar {
     width: 15px;
 }
- 
+
 /* Track */
 ::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    // background: rgba(0,0,0,0.1);
-  background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
 }
-// ::-webkit-scrollbar-thumb:window-inactive {
-//   background: transparentize($md-blue-900, 0.8); 
-// }
