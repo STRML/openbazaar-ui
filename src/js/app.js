@@ -82,13 +82,13 @@ app.config(function ($routeProvider, $routeSegmentProvider, $locationProvider) {
 			templateUrl: 'templates/messages.html'
 		})
 			.within()
-			.segment('overview', {
+			.segment('index', {
 				default: true,
-				templateUrl: 'templates/messages/overview.html',
+				templateUrl: 'templates/messages/index.html',
 				controller: require('./controllers/messages')
 			})
 			.segment('message', {
-				templateUrl: 'templates/messages/message.html',
+				templateUrl: 'templates/messages/view.html',
 				controller: require('./controllers/messages/view'),
 				dependencies: ['id']
 			})
@@ -109,6 +109,7 @@ app.directive('autoFocus', require('./directives/autofocus'));
 app.directive('identicon', require('./directives/identicon'));
 
 app.service('Alert', require('./services/Alert'));
+app.service('Messages', require('./services/Messages'));
 app.service('Peers', require('./services/Peers'));
 app.service('Socket', require('./services/Socket'));
 app.service('Status', require('./services/Status'));
