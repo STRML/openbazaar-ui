@@ -17,11 +17,12 @@ var app = angular.module('obApp', [
 ]);
 
 app.config(function ($routeProvider, $routeSegmentProvider, $locationProvider) {
+
+	// define routes and segments
 	$routeSegmentProvider
 		.when('/labs', 'labs')
 		.when('/home', 'home')
 		.when('/store', 'store')
-
 		.when('/messages', 'messages')
 		.when('/messages/:id', 'messages.message')
 		.when('/settings', 'settings')
@@ -29,16 +30,21 @@ app.config(function ($routeProvider, $routeSegmentProvider, $locationProvider) {
 		.when('/browse/market/:id', 'browse.market');
 
 	$routeSegmentProvider
+		// labs segment
 		.segment('labs', {
 			default: true,
 			templateUrl: 'templates/labs.html',
-			controller: 'LabsController'
+			controller: require('./controllers/labs')
 		})
+
+		// home segment
 		.segment('home', {
 			default: true,
 			templateUrl: 'templates/home.html',
-			controller: 'HomeController'
+			controller: require('./controllers/home')
 		})
+
+		// my market segment
 		.segment('store', {
 			templateUrl: 'templates/store.html'
 		})
@@ -53,27 +59,9 @@ app.config(function ($routeProvider, $routeSegmentProvider, $locationProvider) {
 				controller: function () { console.log('store contracts'); }
 			})
 			.up()
-		.segment('messages', {
-			templateUrl: 'templates/messages.html'
-		})
-			.within()
-			.segment('overview', {
-				default: true,
-				templateUrl: 'templates/messages/overview.html',
-				controller: function($scope, $location) {
-					$scope.open = function () { $location.path('/messages/someid'); };
-				}
-			})
-			.segment('message', {
-				templateUrl: 'templates/messages/message.html',
-				controller: function() { console.log('message'); },
-				dependencies: ['id']
-			})
-			.up()
-		.segment('settings', {
-			templateUrl: 'templates/settings.html',
-			controller: 'SettingsController'
-		})
+
+
+		// markets segment
 		.segment('browse', {
 			templateUrl: 'templates/browse.html',
 		})
@@ -81,30 +69,41 @@ app.config(function ($routeProvider, $routeSegmentProvider, $locationProvider) {
 			.segment('overview', {
 				default: true,
 				templateUrl: 'templates/browse/overview.html',
-				controller: 'BrowseController'
+				controller: require('./controllers/markets')
 			})
 			.segment('market', {
 				templateUrl: 'templates/browse/market.html',
-				controller: 'MarketController'
+				controller: require('./controllers/markets/view')
 			})
-			.up();
-			// .within()
-			// .segment('overview', {
-			// 	default: true,
-			// 	templateUrl: 'templates/settings/overview.html',
-			// 	controller: function() { console.log('settings'); }
-			// })
-			// .up()
+			.up()
+
+		// messages segment
+		.segment('messages', {
+			templateUrl: 'templates/messages.html'
+		})
+			.within()
+			.segment('overview', {
+				default: true,
+				templateUrl: 'templates/messages/overview.html',
+				controller: require('./controllers/messages')
+			})
+			.segment('message', {
+				templateUrl: 'templates/messages/message.html',
+				controller: require('./controllers/messages/view'),
+				dependencies: ['id']
+			})
+			.up()
+
+		// settings segment
+		.segment('settings', {
+			templateUrl: 'templates/settings.html',
+			controller: require('./controllers/settings')
+		});
 
 	$routeProvider.otherwise('/home');
 });
 
-app.controller('AppController', require('./controllers/App'));
-app.controller('LabsController', require('./controllers/Labs'));
-app.controller('HomeController', require('./controllers/Home'));
-app.controller('BrowseController', require('./controllers/Browse'));
-app.controller('MarketController', require('./controllers/Market'));
-app.controller('SettingsController', require('./controllers/Settings'));
+app.controller('AppController', require('./controllers/app'));
 
 app.directive('autoFocus', require('./directives/autofocus'));
 app.directive('identicon', require('./directives/identicon'));
