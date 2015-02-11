@@ -15,10 +15,8 @@
 				)
 		li(ng-class='{"active": ("home" | routeSegmentStartsWith)}')
 			a(href='#/home'): i.mdi.mdi-home
-		li(ng-class='{"active": ("store" | routeSegmentStartsWith)}')
-			a(href='#/store'): i.mdi.mdi-store
 		li(ng-class='{"active": ("markets" | routeSegmentStartsWith)}')
-			a(href='#/markets'): i.mdi.mdi-shopping
+			a(href='#/markets'): i.mdi.mdi-store
 		li(ng-class='{"active": ("messages" | routeSegmentStartsWith)}')
 			a(href='#/messages')
 				i.mdi.mdi-comment-text.triple-wobble(

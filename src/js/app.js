@@ -22,7 +22,6 @@ app.config(function ($routeProvider, $routeSegmentProvider, $locationProvider) {
 	$routeSegmentProvider
 		.when('/labs', 'labs')
 		.when('/home', 'home')
-		.when('/store', 'store')
 		.when('/messages', 'messages')
 		.when('/messages/:id', 'messages.message')
 		.when('/settings', 'settings')
@@ -43,23 +42,6 @@ app.config(function ($routeProvider, $routeSegmentProvider, $locationProvider) {
 			templateUrl: 'templates/home.html',
 			controller: require('./controllers/home')
 		})
-
-		// my market segment
-		.segment('store', {
-			templateUrl: 'templates/store.html'
-		})
-			.within()
-			.segment('overview', {
-				default: true,
-				templateUrl: 'templates/store/overview.html',
-				controller: function () { console.log('store overview'); }
-			})
-			.segment('contracts', {
-				templateUrl: 'templates/store/contracts.html',
-				controller: function () { console.log('store contracts'); }
-			})
-			.up()
-
 
 		// markets segment
 		.segment('markets', {
