@@ -1,6 +1,8 @@
+// dependencies
 @import "../vendor/material-colors/dist/colors";
-
 @import "default/fonts";
+
+// overrides
 @import "default/overrides";
 
 $brand-primary: $md-blue-500;
@@ -26,6 +28,7 @@ $input-border-focus: #aaa;
 $pre-bg: $md-grey-50;
 $pre-border: $md-grey-100;
 
+// components
 $scrollbar-width: 15px;
 $scrollbar-track-color: rgba(0, 0, 0, 0.1);
 $scrollbar-thumb-color: rgba(0, 0, 0, 0.1);
