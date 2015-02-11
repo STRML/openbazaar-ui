@@ -1,37 +1,7 @@
-@import "../vendor/material-colors/dist/colors";
-@import "fonts";
-
-// #337ab7
-$brand-primary: $md-blue-500;
-
-$brand-success: #5cb85c;
-$brand-info: $md-blue-100;
-$brand-warning: #f0ad4e;
-$brand-danger: #d9534f;
-
-$state-success-text: $md-light-green-500;
-$state-success-bg: $md-light-green-50;
-
-$state-info-text: $md-blue-300;
-$state-info-bg: $md-blue-50;
-
-$state-warning-text: $md-deep-orange-400;
-$state-warning-bg: $md-deep-orange-50;
-
-$state-danger-text: $md-red-400;
-$state-danger-bg: $md-red-50;
-
-$input-border-focus: #aaa;
-$pre-bg: $md-grey-50;
-$pre-border: $md-grey-100;
-
-.btn {
-    background-color: transparent;
-}
+@import "themes/default";
 
 @import "bootstrap";
 
-@import "loader";
 @import "scrollbar";
 @import "topbar";
 @import "sidebar";
@@ -42,15 +12,15 @@ body {
 }
 
 body {
-    overflow-x: hidden;
-    padding-top: 80px;
-    color: #666;
     background-color: transparent;
     background-repeat: repeat, no-repeat;
     background-position: 0 0, 96% 97%;
     background-size: auto, 64px;
-    transition: all 250ms ease-in-out;
+    color: #666;
     opacity: 0;
+    overflow-x: hidden;
+    padding-top: 80px;
+    transition: all 250ms ease-in-out;
 
     &.loaded {
         background: #fff;
@@ -62,10 +32,6 @@ p {
     color: #444;
     line-height: 1.6em;
     margin-bottom: 30px;
-}
-
-.serif {
-    font-family: Vollkorn;
 }
 
 .help-block {
@@ -101,16 +67,16 @@ pre {
 }
 
 .content {
-    position: fixed;
+    bottom: 0;
+    left: 50px;
     overflow-x: hidden;
     overflow-y: scroll;
-    top: 0;
-    left: 50px;
-    bottom: 0;
-    right: 0;
     padding: 15px;
-    transform-style: preserve-3d;
     padding-top: 50px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform-style: preserve-3d;
 
     .btn {
         text-align: left;
@@ -121,10 +87,6 @@ pre {
         }
     }
 
-}
-
-.btn {
-    text-transform: uppercase;
 }
 
 .section-header {
@@ -220,7 +182,7 @@ pre {
         line-height: 41px;
 
         &.active a {
-            color: $md-blue-900;
+            color: $brand-secondary;
             font-weight: 800;
         }
     }
@@ -352,7 +314,7 @@ a:hover {
 }
 
 .dark-blue {
-    color: $md-blue-900;
+    color: $brand-secondary;
 }
 
 .triple-wobble {
