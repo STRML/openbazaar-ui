@@ -54,7 +54,7 @@ can communicate with OpenBazaar.
 ### openbazaar ui
 
 ```shell
-git clone <repo> openbazaar-ui && cd openbazaar-ui 
+git clone https://github.com/OpenBazaar/OpenBazaar-UI.git openbazaar-ui && cd $_
 mkdir nw 
 
 # Copy nw.js related files to `/path/to/openbazaar-ui/nw'

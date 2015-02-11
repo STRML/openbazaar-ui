@@ -17,99 +17,81 @@ var app = angular.module('obApp', [
 ]);
 
 app.config(function ($routeProvider, $routeSegmentProvider, $locationProvider) {
+
+	// define routes and segments
 	$routeSegmentProvider
 		.when('/labs', 'labs')
 		.when('/home', 'home')
-		.when('/store', 'store')
-
 		.when('/messages', 'messages')
 		.when('/messages/:id', 'messages.message')
 		.when('/settings', 'settings')
-		.when('/browse', 'browse')
-		.when('/browse/market/:id', 'browse.market');
+		.when('/markets', 'markets')
+		.when('/markets/:id', 'markets.view');
 
 	$routeSegmentProvider
+		// labs segment
 		.segment('labs', {
 			default: true,
 			templateUrl: 'templates/labs.html',
-			controller: 'LabsController'
+			controller: require('./controllers/labs')
 		})
+
+		// home segment
 		.segment('home', {
 			default: true,
 			templateUrl: 'templates/home.html',
-			controller: 'HomeController'
+			controller: require('./controllers/home')
 		})
-		.segment('store', {
-			templateUrl: 'templates/store.html'
+
+		// markets segment
+		.segment('markets', {
+			templateUrl: 'templates/markets.html',
 		})
 			.within()
-			.segment('overview', {
+			.segment('index', {
 				default: true,
-				templateUrl: 'templates/store/overview.html',
-				controller: function () { console.log('store overview'); }
+				templateUrl: 'templates/markets/index.html',
+				controller: require('./controllers/markets')
 			})
-			.segment('contracts', {
-				templateUrl: 'templates/store/contracts.html',
-				controller: function () { console.log('store contracts'); }
+			.segment('view', {
+				templateUrl: 'templates/markets/view.html',
+				controller: require('./controllers/markets/view')
 			})
 			.up()
+
+		// messages segment
 		.segment('messages', {
 			templateUrl: 'templates/messages.html'
 		})
 			.within()
-			.segment('overview', {
+			.segment('index', {
 				default: true,
-				templateUrl: 'templates/messages/overview.html',
-				controller: function($scope, $location) {
-					$scope.open = function () { $location.path('/messages/someid'); };
-				}
+				templateUrl: 'templates/messages/index.html',
+				controller: require('./controllers/messages')
 			})
 			.segment('message', {
-				templateUrl: 'templates/messages/message.html',
-				controller: function() { console.log('message'); },
+				templateUrl: 'templates/messages/view.html',
+				controller: require('./controllers/messages/view'),
 				dependencies: ['id']
 			})
 			.up()
+
+		// settings segment
 		.segment('settings', {
 			templateUrl: 'templates/settings.html',
-			controller: 'SettingsController'
-		})
-		.segment('browse', {
-			templateUrl: 'templates/browse.html',
-		})
-			.within()
-			.segment('overview', {
-				default: true,
-				templateUrl: 'templates/browse/overview.html',
-				controller: 'BrowseController'
-			})
-			.segment('market', {
-				templateUrl: 'templates/browse/market.html',
-				controller: 'MarketController'
-			})
-			.up();
-			// .within()
-			// .segment('overview', {
-			// 	default: true,
-			// 	templateUrl: 'templates/settings/overview.html',
-			// 	controller: function() { console.log('settings'); }
-			// })
-			// .up()
+			controller: require('./controllers/settings')
+		});
 
 	$routeProvider.otherwise('/home');
 });
 
-app.controller('AppController', require('./controllers/App'));
-app.controller('LabsController', require('./controllers/Labs'));
-app.controller('HomeController', require('./controllers/Home'));
-app.controller('BrowseController', require('./controllers/Browse'));
-app.controller('MarketController', require('./controllers/Market'));
-app.controller('SettingsController', require('./controllers/Settings'));
+app.controller('AppController', require('./controllers/app'));
 
 app.directive('autoFocus', require('./directives/autofocus'));
 app.directive('identicon', require('./directives/identicon'));
 
 app.service('Alert', require('./services/Alert'));
+app.service('Messages', require('./services/Messages'));
 app.service('Peers', require('./services/Peers'));
 app.service('Socket', require('./services/Socket'));
 app.service('Status', require('./services/Status'));

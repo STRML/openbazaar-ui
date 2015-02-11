@@ -1,14 +1,14 @@
 /* Let's get this party started */
 ::-webkit-scrollbar {
-    width: 15px;
+    width: $scrollbar-width;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
+    background: $scrollbar-track-color;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.1);
+    background: $scrollbar-thumb-color;
 }
