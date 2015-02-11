@@ -6,7 +6,7 @@ module.exports = [
     $scope.peers = Peers.get();
 
     $scope.openMarket = function(guid) {
-      $location.path('/browse/market/' + guid);
+      $location.path('/markets/' + guid);
     };
   }
 ];

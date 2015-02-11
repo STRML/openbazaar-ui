@@ -26,8 +26,8 @@ app.config(function ($routeProvider, $routeSegmentProvider, $locationProvider) {
 		.when('/messages', 'messages')
 		.when('/messages/:id', 'messages.message')
 		.when('/settings', 'settings')
-		.when('/browse', 'browse')
-		.when('/browse/market/:id', 'browse.market');
+		.when('/markets', 'markets')
+		.when('/markets/:id', 'markets.view');
 
 	$routeSegmentProvider
 		// labs segment
@@ -62,17 +62,17 @@ app.config(function ($routeProvider, $routeSegmentProvider, $locationProvider) {
 
 
 		// markets segment
-		.segment('browse', {
-			templateUrl: 'templates/browse.html',
+		.segment('markets', {
+			templateUrl: 'templates/markets.html',
 		})
 			.within()
-			.segment('overview', {
+			.segment('index', {
 				default: true,
-				templateUrl: 'templates/browse/overview.html',
+				templateUrl: 'templates/markets/index.html',
 				controller: require('./controllers/markets')
 			})
-			.segment('market', {
-				templateUrl: 'templates/browse/market.html',
+			.segment('view', {
+				templateUrl: 'templates/markets/view.html',
 				controller: require('./controllers/markets/view')
 			})
 			.up()
