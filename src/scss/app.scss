@@ -1,10 +1,9 @@
 @import "themes/default";
+@import "components/scrollbar";
+@import "components/topbar";
+@import "components/sidebar";
 
 @import "bootstrap";
-
-@import "scrollbar";
-@import "topbar";
-@import "sidebar";
 
 html,
 body {
