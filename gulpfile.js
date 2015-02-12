@@ -111,7 +111,7 @@ gulp.task('watch', ['default'], function () {
   // watchify(bundler).on('update', bundle);
   livereload.listen();
 
-  gulp.watch('src/js/**/*.js', ['scripts']);
+  gulp.watch('src/js/**/*.js', ['scripts', 'scripts-browser']);
   gulp.watch('src/views/**/*.jade', ['views', 'views-browser']);
   gulp.watch('src/scss/**/*.scss', ['styles']);
 });
