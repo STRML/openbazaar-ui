@@ -1,0 +1,114 @@
+.sidebar {
+    background-color: $brand-secondary;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 50px;
+    z-index: 9991;
+    -webkit-user-select: none;
+
+    .search {
+        position: relative;
+    }
+
+    label {
+        background-color: $brand-secondary;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 24px;
+        font-weight: 400;
+        height: 50px;
+        line-height: 50px;
+        margin: 0;
+        overflow-x: hidden;
+        padding: 0 15px;
+        transition: all 250ms ease-in-out;
+        vertical-align: top;
+        width: 50px;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        &.active {
+            background: #fff;
+            color: transparentize($brand-secondary, 0.2);
+        }
+    }
+
+    input {
+        background: #fff;
+        border: 0;
+        border-bottom: 1px transparent solid;
+        color: #444;
+        font-size: 16px;
+        height: 30px;
+        left: 50px;
+        line-height: 30px;
+        margin: 10px 0 10px 15px;
+        opacity: 0;
+        position: absolute;
+        transition: all 250ms ease-in-out;
+        vertical-align: top;
+        width: 0px;
+
+        &::-webkit-input-placeholder {
+            color: #ccc;
+            transition: color 250ms ease-in-out;
+        }
+
+        &:focus {
+            opacity: 1;
+            outline: none;
+        }
+
+        &.active {
+            cursor: default;
+            width: 250px;
+
+            &::-webkit-input-placeholder {
+                color: #888;
+            }
+        }
+    }
+
+    .sidebar-nav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        i {
+            font-size: 24px;
+        }
+
+        > li {
+            padding: 0;
+
+            > a {
+                color: #fff;
+                display: inline-block;
+                font-size: 24px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                text-decoration: none;
+                transition: all 250ms ease-in-out;
+                width: 50px;
+
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    color: #fff;
+                }
+            }
+
+            &.active {
+                > a {
+                    background-color: rgba(255, 255, 255, 1);
+                    color: $brand-secondary;
+                }
+            }
+        }
+    }
+}

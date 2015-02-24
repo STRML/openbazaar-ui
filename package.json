@@ -14,84 +14,44 @@
     "show": false
   },
   "devDependencies": {
-    "browserify": "^8.1.3",
-    "browserify-shim": "^3.8.2",
-    "gulp": "^3.8.10",
-    "gulp-concat": "^2.4.3",
-    "gulp-copy": "0.0.2",
-    "gulp-embedlr": "^0.5.2",
-    "gulp-jade": "^0.11.0",
-    "gulp-livereload": "^3.7.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-replace": "^0.5.2",
-    "gulp-sass": "^1.3.2",
-    "gulp-sourcemaps": "^1.3.0",
-    "gulp-util": "^3.0.3",
-    "gulp-webserver": "^0.9.0",
+    "css-loader": "^0.9.1",
+    "exports-loader": "^0.6.2",
+    "express": "^4.12.0",
+    "extract-text-webpack-plugin": "^0.3.8",
+    "file-loader": "^0.8.1",
+    "imports-loader": "^0.6.3",
     "jshint": "^2.6.0",
+    "jsx-loader": "^0.12.2",
     "precommit-hook": "^1.0.7",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.0.0",
-    "watchify": "^2.3.0"
-  },
-  "browser": {
-    "jquery": "./src/vendor/jquery/dist/jquery.js",
-    "angular": "./src/vendor/angular/angular.js",
-    "ngRoute": "./src/vendor/angular-route/angular-route.js",
-    "ngRouteSegment": "./src/vendor/angular-route-segment/build/angular-route-segment.js",
-    "ngAnimate": "./src/vendor/angular-animate/angular-animate.js",
-    "ngOffCanvas": "./src/vendor/angular-off-canvas/off-canvas.js",
-    "bootstrap": "./src/vendor/angular-bootstrap/ui-bootstrap.js",
-    "bootstrap-tpls": "./src/vendor/angular-bootstrap/ui-bootstrap-tpls.js",
-    "pnglib": "./src/vendor/js/pnglib.js",
-    "identicon": "./src/vendor/js/identicon.js"
-  },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
-  },
-  "browserify-shim": {
-    "jquery": "$",
-    "angular": "angular",
-    "ngRoute": {
-      "depends": "angular"
-    },
-    "ngRouteSegment": {
-      "depends": "angular"
-    },
-    "ngAnimate": {
-      "depends": "angular"
-    },
-    "ngScrollbar": {
-      "depends": "angular"
-    },
-    "bootstrap": {
-      "depends": [
-        "angular",
-        "jquery"
-      ]
-    },
-    "bootstrap-tpls": {
-      "depends": [
-        "angular",
-        "jquery"
-      ]
-    },
-    "identicon": {
-      "exports": "Identicon",
-      "depends": "pnglib"
-    }
+    "pushstate-server": "^1.5.0",
+    "react-hot-loader": "^1.1.5",
+    "sass-loader": "^0.4.0-beta.1",
+    "style-loader": "^0.8.3",
+    "superstatic": "^2.0.2",
+    "url-loader": "^0.5.5",
+    "webpack": "^1.6.0",
+    "webpack-dev-server": "^1.7.0"
   },
   "dependencies": {
-    "lodash": "^3.1.0",
+    "babel-core": "^4.4.5",
+    "babel-loader": "^4.0.0",
+    "bluebird": "^2.9.12",
+    "debug": "^2.1.1",
+    "lodash": "^3.3.0",
     "malarkey": "^1.1.5",
+    "react": "^0.12.2",
+    "react-async": "^2.0.1",
+    "react-router-component": "^0.23.3",
     "tail": "^0.4.0"
   },
   "scripts": {
-    "lint": "jshint ./src/js"
+    "commitLint": "jsxhint `git diff --cached --diff-filter=ACMRTUXB --name-only HEAD | egrep '\\.js$|\\.jsx$'`",
+    "lint": "jsxhint '**/*.js' '!node_modules/**/*' '!ui/build/**/*' '!ui/webroot/**/*' '!ui/assets/**/*'",
+    "dev": "bash run-dev.sh",
+    "build-prerender": "webpack --config webpack-prerender.config.js --progress --hide-modules",
+    "build-public": "npm run-script build-prerender & webpack --config webpack-production.config.js --progress --hide-modules"
   },
   "precommit": [
-    "lint"
+    "commitLint"
   ]
 }

@@ -1,10 +1,21 @@
 {
   "node": true,
   "browser": true,
-  "curly": true,
-  "latedef": "nofunc",
-  "quotmark": true,
+  "curly": false,
   "undef": true,
   "unused": false,
-  "trailing": true
+  "shadow": true,
+  "eqeqeq": true,
+  "camelcase": true,
+  "bitwise": true,
+  "es5": true,
+  "freeze": true,
+  "indent": 2,
+  "noarg": true,
+  "strict": true,
+  "latedef": "nofunc",
+  "quotmark": false,
+  "trailing": true,
+  "esnext": true,
+  "predef": [ "-Promise" ]
 }
