@@ -6,7 +6,6 @@
   "unused": false,
   "shadow": true,
   "eqeqeq": true,
-  "camelcase": true,
   "bitwise": true,
   "es5": true,
   "freeze": true,

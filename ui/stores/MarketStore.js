@@ -9,9 +9,6 @@ var MarketStore = module.exports = Fluxxor.createStore({
   actions: {
   },
 
-  // Announce 'connection lost' when the websocket has failed to connect this many times in a row
-  websocketDisconnectLimit: 3,
-
   initialize(data) {
     this.markets = data;
   },

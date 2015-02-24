@@ -200,6 +200,9 @@ pre {
 }
 
 .messages {
+    tr {
+      cursor: pointer;
+    }
     tr:first-of-type td {
         border-top: 0;
     }

@@ -3,11 +3,12 @@ var React = require('react/addons');
 var app = require('ui/app');
 var _  = require('lodash');
 var IdenticonView = require('ui/views/widgets/Identicon');
+var FluxMixin = require('fluxxor').FluxMixin(React);
 
 // OB Markets Page.
 var Markets = module.exports = React.createClass({
   displayName: 'Markets',
-  mixins: [React.addons.PureRenderMixin],
+  mixins: [React.addons.PureRenderMixin, FluxMixin],
   propTypes: {
     markets: React.PropTypes.array.isRequired
   },
@@ -15,14 +16,14 @@ var Markets = module.exports = React.createClass({
   market(market, i) {
     return (
       <div className="col-sm-3" onClick={this.onOpenMarket.bind(this, market.guid)} key={i}>
-        <IdenticonView iconSize="150" hash={market.guid} className="identicon-center" />
+        <IdenticonView iconSize={150} hash={market.guid} className="identicon-center" />
         <div className="text-center">{market.nick}</div>
       </div>
     );
   },
 
   onOpenMarket(guid, e) {
-
+    this.getFlux().actions.navigate(app.root + "/market/" + guid);
   },
 
   render() {

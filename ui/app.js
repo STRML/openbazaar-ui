@@ -65,6 +65,7 @@ function getInitialData(app, data){
   data = data || {};
   app.initialData = data;
   app.csrfToken = data.csrfToken;
+  app.root = "";
   app.revision = data.revision; // from .gitrevision
   app.messages = require('./utils/Messages')('EN-US');
 }

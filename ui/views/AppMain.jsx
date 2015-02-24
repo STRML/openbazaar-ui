@@ -43,7 +43,8 @@ var AppMain = module.exports = React.createClass({
   getStateFromFlux() {
     var flux = this.getFlux();
     return {
-      markets: flux.stores['MarketStore'].getMarkets()
+      markets: flux.stores['MarketStore'].getMarkets(),
+      messages: flux.stores['MessageStore'].getMessages()
       // stuff: flux.stores['StuffStore'].getData()
     };
   },
@@ -99,8 +100,13 @@ var AppMain = module.exports = React.createClass({
                 <Location path={'/(home)'} handler={require('ui/views/pages/Home.jsx')} />
                 <Location path={'/markets'} handler={require('ui/views/pages/Markets.jsx')} 
                   markets={this.state.markets} />
-                  
-                <Location path={'/markets/:id'} handler={require('ui/views/pages/Home.jsx')} />
+                <Location path={'/market/:guid'} handler={require('ui/views/pages/Market.jsx')} 
+                  markets={this.state.markets} />
+
+                <Location path={'/messages'} handler={require('ui/views/pages/Messages.jsx')} 
+                  messages={this.state.messages} />
+                <Location path={'/message/:id'} handler={require('ui/views/pages/Message.jsx')} 
+                  messages={this.state.messages} />
 
                 {/* 404 */}
                 <NotFound handler={NotFoundPage} />
