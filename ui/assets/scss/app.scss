@@ -19,8 +19,6 @@ body {
   background-position: 0 0, 96% 97%;
   background-size: auto, 64px;
   color: #666;
-  padding-top: 80px;
-  transition: all 250ms ease-in-out;
 }
 
 p {
@@ -62,24 +60,12 @@ pre {
 }
 
 #content {
-  bottom: 0;
-  left: 0;
   padding: 15px;
   padding-top: 50px;
-  position: fixed;
-  right: 0;
-  top: 0;
-  transform-style: preserve-3d;
+}
 
-  .btn {
-    text-align: left;
-
-    i.mdi {
-      font-size: 24px;
-      margin-right: 5px;
-    }
-  }
-
+.wrap {
+  padding-left: 50px;
 }
 
 .section-header {
@@ -338,64 +324,10 @@ a:hover {
   width: auto;
 }
 
-.content-container {
-  position: absolute;
-  right: 0;
-  left: 0;
-  display: block;
-  padding: 15px 30px 15px 30px;
-}
-
 .form-control {
   &:focus {
     @include box-shadow(0 0 0 0 $md-light-blue-500);
   }
-}
-
-.off-canvas__nav {
-  -webkit-transform: translate3d(0, 0, 0) translateX(250px);
-  -ms-transform: translate3d(0, 0, 0) translateX(250px);
-  -moz-transform: translate3d(0, 0, 0) translateX(250px);
-  -o-transform: translate3d(0, 0, 0) translateX(250px);
-  transform: translate3d(0, 0, 0) translateX(250px);
-  -webkit-transition: all 0.3s cubic-bezier(0.16, 0.63, 0.45, 0.98);
-  -ms-transition: all 0.3s cubic-bezier(0.16, 0.63, 0.45, 0.98);
-  -moz-transition: all 0.3s cubic-bezier(0.16, 0.63, 0.45, 0.98);
-  -o-transition: all 0.3s cubic-bezier(0.16, 0.63, 0.45, 0.98);
-  transition: all 0.3s cubic-bezier(0.16, 0.63, 0.45, 0.98);
-}
-
-.off-canvas__content {
-  -webkit-transform: translate3d(0, 0, 0) translateX(0);
-  -ms-transform: translate3d(0, 0, 0) translateX(0);
-  -moz-transform: translate3d(0, 0, 0) translateX(0);
-  -o-transform: translate3d(0, 0, 0) translateX(0);
-  transform: translate3d(0, 0, 0) translateX(0);
-  -webkit-transition: all 0.3s cubic-bezier(0.16, 0.63, 0.45, 0.98);
-  -ms-transition: all 0.3s cubic-bezier(0.16, 0.63, 0.45, 0.98);
-  -moz-transition: all 0.3s cubic-bezier(0.16, 0.63, 0.45, 0.98);
-  -o-transition: all 0.3s cubic-bezier(0.16, 0.63, 0.45, 0.98);
-  transition: all 0.3s cubic-bezier(0.16, 0.63, 0.45, 0.98);
-}
-
-.is-off-canvas-opened .off-canvas__nav {
-  -webkit-transform: translate3d(0, 0, 0) translateX(0);
-  -ms-transform: translate3d(0, 0, 0) translateX(0);
-  -moz-transform: translate3d(0, 0, 0) translateX(0);
-  -o-transform: translate3d(0, 0, 0) translateX(0);
-  transform: translate3d(0, 0, 0) translateX(0);
-}
-
-.off-canvas__nav {
-  background-color: #222;
-  border-left: 1px #090909 solid;
-  color: white;
-  position: fixed;
-  right: 0;
-  top: 50px;
-  width: 250px;
-  bottom: 0;
-  -webkit-user-drag: none;
 }
 
 .backdrop {

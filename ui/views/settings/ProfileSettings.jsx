@@ -98,7 +98,7 @@ var ProfileSettings = module.exports = React.createClass({
           <div className="form-group">
             <div className="row">
               <div className="col-sm-3">
-                <label>Stree Address</label>
+                <label>Street Address</label>
               </div>
               <div className="col-sm-9">
                 <input className="form-control"/>

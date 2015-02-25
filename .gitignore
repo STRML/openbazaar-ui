@@ -2,6 +2,7 @@ src/components
 node_modules
 dist
 nw
+ui/build
 src/vendor/*
 !src/vendor/js
 npm-debug.log

@@ -58,7 +58,7 @@ var AdvancedSettings = module.exports = React.createClass({
             <div className="col-sm-6">
               <div className="btn-group-vertical btn-block">
                 <button ng-click="dev.test.newMessage($event)" className="btn btn-default"><i className="mdi mdi-comment-text"></i> New Message</button>
-                <button ng-click="dev.screenshot.capture($event)" disabled="disabled" className="btn btn-default disabled"><i className="mdi mdi-camera-iris"></i> Screenshot (Ctrl+S)</button>
+                <button ng-click="dev.screenshot.capture($event)" disabled className="btn btn-default"><i className="mdi mdi-camera-iris"></i> Screenshot (Ctrl+S)</button>
                 <button ng-click="dev.test.newNotification($event)" className="btn btn-default"><i className="mdi mdi-desktop-mac"></i> Desktop Notification</button>
               </div>
             </div>
