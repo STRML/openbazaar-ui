@@ -15,9 +15,9 @@ var Markets = module.exports = React.createClass({
 
   market(market, i) {
     return (
-      <div className="col-sm-3" onClick={this.onOpenMarket.bind(this, market.guid)} key={i}>
+      <div className="col-sm-3 text-center market" onClick={this.onOpenMarket.bind(this, market.guid)} key={i}>
         <IdenticonView iconSize={150} hash={market.guid} className="identicon-center" />
-        <div className="text-center">{market.nick}</div>
+        <div>{market.nick}</div>
       </div>
     );
   },

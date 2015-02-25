@@ -108,6 +108,9 @@ var AppMain = module.exports = React.createClass({
                 <Location path={'/message/:id'} handler={require('ui/views/pages/Message.jsx')} 
                   messages={this.state.messages} />
 
+                <Location path={'/labs'} handler={require('ui/views/pages/Labs.jsx')} />
+                <Location path={'/settings'} handler={require('ui/views/pages/Settings.jsx')} />
+
                 {/* 404 */}
                 <NotFound handler={NotFoundPage} />
               </AnimatedLocations>

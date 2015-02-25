@@ -123,6 +123,13 @@ pre {
   }
 }
 
+.market {
+  @include transition(box-shadow 0.3s);
+  &:hover {
+    box-shadow: 0px 0px 2px 1px rgba(0,0,0,.3);
+  }
+}
+
 .identicon-center {
   cursor: pointer;
 
@@ -136,6 +143,10 @@ pre {
     transition: opacity 250ms ease-in-out;
     opacity: 1;
   }
+}
+
+.tab-set {
+  position: relative;
 }
 
 .tabs {

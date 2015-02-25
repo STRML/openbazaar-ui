@@ -51,7 +51,7 @@ var Sidebar = module.exports = React.createClass({
           {this.link('/markets', 'markets', 'store')}
           {this.link('/messages', 'messages', 'comment-text')}
           {this.link('/settings', 'settings', 'settings')}
-          {this.link('/labs', 'labs', 'breaker')}
+          {this.link('/labs', 'labs', 'beaker')}
         </ul>
       </div>
     );
