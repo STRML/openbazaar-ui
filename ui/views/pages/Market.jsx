@@ -53,7 +53,7 @@ var Market = module.exports = React.createClass({
         </div>
         <div className="row">
           <div className="col-sm-12">
-            <h1>{market.nickname}</h1>
+            <h1 className="market-name">{market.nickname}</h1>
           </div>
           <div className="col-sm-12">
             <div className="block-shade"><small><strong>GUID: </strong>{ market.guid.toUpperCase() }</small>

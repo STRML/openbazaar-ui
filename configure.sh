@@ -8,4 +8,4 @@ USAGE="Usage: $0 ob_port\n\nExample: $0 44444"
 
 WS_PORT=$1
 
-npm install && bower install && gulp
+npm install && bower install && bash run-dev.sh

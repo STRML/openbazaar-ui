@@ -14,16 +14,16 @@
     "show": false
   },
   "devDependencies": {
+    "babel-loader": "^4.0.0",
     "css-loader": "^0.9.1",
     "exports-loader": "^0.6.2",
     "express": "^4.12.0",
     "extract-text-webpack-plugin": "^0.3.8",
     "file-loader": "^0.8.1",
     "imports-loader": "^0.6.3",
-    "jshint": "^2.6.0",
     "jsx-loader": "^0.12.2",
+    "jsxhint": "^0.12.1",
     "precommit-hook": "^1.0.7",
-    "pushstate-server": "^1.5.0",
     "react-hot-loader": "^1.1.5",
     "sass-loader": "^0.4.0-beta.1",
     "style-loader": "^0.8.3",
@@ -34,15 +34,12 @@
   },
   "dependencies": {
     "babel-core": "^4.4.5",
-    "babel-loader": "^4.0.0",
     "bluebird": "^2.9.12",
     "debug": "^2.1.1",
     "lodash": "^3.3.0",
-    "malarkey": "^1.1.5",
     "react": "^0.12.2",
     "react-async": "^2.0.1",
-    "react-router-component": "^0.23.3",
-    "tail": "^0.4.0"
+    "react-router-component": "^0.23.3"
   },
   "scripts": {
     "commitLint": "jsxhint `git diff --cached --diff-filter=ACMRTUXB --name-only HEAD | egrep '\\.js$|\\.jsx$'`",
