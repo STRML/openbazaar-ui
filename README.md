@@ -1,3 +1,20 @@
+# OpenBazaar-UI React
+
+This is a ReactJS port of the @overra's original Angular OpenBazaar-UI.
+
+The README below is mostly out of date as this is a WIP. It will be replaced with accurate data soon.
+
+To run this project,
+
+```bash
+npm install
+npm run dev
+```
+
+Open `http://localhost:8001` in your browser.
+
+----
+
 # OpenBazaar Client
 
 This is still heavily under development, only a small portion ties into the OpenBazaar node. Create an issue with any bugs you find and feel free to contribute.
@@ -10,8 +27,6 @@ This is still heavily under development, only a small portion ties into the Open
 
 - [nw.js](http://nwjs.io) v0.12.0
 - [node.js](https://nodejs.org) & npm
-- bower `npm i -g bower`
-- gulp `npm i -g gulp`
 - OB ws.py check_origin override
 
 ## Installation

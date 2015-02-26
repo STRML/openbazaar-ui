@@ -43,7 +43,7 @@ module.exports = function(options) {
     { test: /pnglib/, loader: "exports?window.PNGlib" }
   ];
 
-  var assets = path.join(__dirname, 'ui', 'assets', 'vendor', 'js');
+  var assets = path.join(__dirname, 'ui', 'assets', 'js');
   var browserAlias = {
   };
 

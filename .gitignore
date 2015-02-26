@@ -1,7 +1,7 @@
 node_modules
 dist
 nw
-ui/build
+ui/build/*
 ui/assets/vendor
 !ui/assets/vendor/js
 npm-debug.log
