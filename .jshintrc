@@ -7,7 +7,6 @@
   "shadow": true,
   "eqeqeq": true,
   "bitwise": true,
-  "es5": true,
   "freeze": true,
   "indent": 2,
   "noarg": true,

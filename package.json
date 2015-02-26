@@ -23,7 +23,7 @@
     "imports-loader": "^0.6.3",
     "jsx-loader": "^0.12.2",
     "jsxhint": "^0.12.1",
-    "precommit-hook": "^1.0.7",
+    "pre-commit": "^1.0.5",
     "react-hot-loader": "^1.1.5",
     "sass-loader": "^0.4.0-beta.1",
     "style-loader": "^0.8.3",
