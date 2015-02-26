@@ -116,9 +116,9 @@ var BrowserStore = module.exports = Fluxxor.createStore({
   },
 
   // Title is composed of a few settable parts.
-  // siteName: String (always BitMEX)
+  // siteName: String
+  // pageName: String
   // notifications: Number
-  // price: String (latest price)
   setTitle(titleParts) {
     if (!process.browser) return;
     _.extend(this.title, titleParts);
