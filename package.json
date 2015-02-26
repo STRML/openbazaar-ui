@@ -36,6 +36,7 @@
     "babel-core": "^4.4.5",
     "bluebird": "^2.9.12",
     "debug": "^2.1.1",
+    "fluxxor": "^1.5.2",
     "lodash": "^3.3.0",
     "react": "^0.12.2",
     "react-async": "^2.0.1",
