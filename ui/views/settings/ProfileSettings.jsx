@@ -173,7 +173,7 @@ var ProfileSettings = module.exports = React.createClass({
               <div className="col-sm-2">
                 <div className="input-group">
                   <div className="input-group-addon"><i className="mdi mdi-currency-btc"></i></div>
-                  <input value="0" className="form-control"/>
+                  <input defaultValue="0" className="form-control"/>
                 </div>
               </div>
             </div>

@@ -36,7 +36,7 @@ This is still heavily under development, only a small portion ties into the Open
 When OpenBazaar opens, it will print a port. For example:
 
 ```
-{'nat_type': 'Symmetric NAT', 'external_ip': '110.77.235.189', 
+{'nat_type': 'Symmetric NAT', 'external_ip': '110.77.235.189',
 'external_port': 29865}
 ```
 
@@ -45,7 +45,7 @@ be used as the `WS_PORT` env var when building, as seen below.
 
 ### OB ws.py check_origin override
 
-This bypasses the origin check in tornado's WebSocketHandler so that the nw app 
+This bypasses the origin check in tornado's WebSocketHandler so that the nw app
 can communicate with OpenBazaar.
 
 - Stop your OpenBazaar node
@@ -63,21 +63,22 @@ can communicate with OpenBazaar.
 +    # overwrite tornado.websocket.WebSocketHandler's check_origin
 +    # https://github.com/tornadoweb/tornado/blob/master/tornado/websocket.py#L311
 +    def check_origin(self, origin):
-+        return True
++        parsed_origin = urllib.parse.urlparse(origin)
++        return parsed_origin.netloc.endswith(".mydomain.com")
 ```
 
 ### openbazaar ui
 
 ```shell
 git clone https://github.com/OpenBazaar/OpenBazaar-UI.git openbazaar-ui && cd $_
-mkdir nw 
+mkdir nw
 
 # Copy nw.js related files to `/path/to/openbazaar-ui/nw'
 
 # Install gulp related modules and bower components
 # If you're on linux and ./nw/nw points to your nw.js binary
 # you should be able to `gulp watch` -- need osx support
-# 
+#
 # WS_PORT=56573
 ./configure.sh ob_port
 
@@ -87,12 +88,12 @@ mkdir nw
 
 ### Running in Browser instead of nw.js
 
-You might want to debug in a normal browser instead of running nw.js. 
+You might want to debug in a normal browser instead of running nw.js.
 To do this:
 
 ```shell
 # Fill in WS_PORT from OpenBazaar. See above.
-# `browser-dev` will compile files for the browser, and open your 
+# `browser-dev` will compile files for the browser, and open your
 # default browser to the correct host and port.
 WS_PORT=<websocket port> gulp browser-dev
 

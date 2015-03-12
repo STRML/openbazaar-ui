@@ -54,7 +54,7 @@ var app = {
 // Export
 module.exports = app;
 
-// Application data is passed in via data.js. 
+// Application data is passed in via data.js.
 // We now pass that in to ensure that React comes up with the
 // same result when it renders the component (you'll see a warning in the browser console
 // if it fails to render the same result - in which case there may be something out of whack
@@ -65,7 +65,6 @@ function getInitialData(app, data){
   data = data || {};
   app.initialData = data;
   app.csrfToken = data.csrfToken;
-  app.root = "";
   app.revision = data.revision; // from .gitrevision
   app.messages = require('./utils/Messages')('EN-US');
 }
@@ -86,7 +85,7 @@ function initFlux(app, data){
   // Create actions
   var actions = require('./actions/index');
   app.flux = new Fluxxor.Flux(app.stores, actions);
-  
+
   // Tell the stores that flux is up and running. Only executes in browser env.
   app.flux.actions.fluxInit();
 

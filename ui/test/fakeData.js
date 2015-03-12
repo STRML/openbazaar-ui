@@ -25,7 +25,7 @@ module.exports = {
         <hr/>
         <div class="text-center">
           <h2>Want to help us change the world?</h2>
-          <h3>Visit us at <a href="https://github.com/OpenBazaar/OpenBazaar" target="_blank">GitHub</a></h3>
+          <h3>Visit us on <a href="https://github.com/OpenBazaar/OpenBazaar" target="_blank">GitHub</a></h3>
         </div>
       `,
       date: new Date()
@@ -34,7 +34,7 @@ module.exports = {
   // markets
   peers: [
     {
-      guid: 'd6fe8c82fb0abac17a702fd2a94effddd6fe8c82fb0abac17a702fd2a94herpd', 
+      guid: 'd6fe8c82fb0abac17a702fd2a94effddd6fe8c82fb0abac17a702fd2a94herpd',
       nick: 'Foo Bar Market',
       nickname: 'Foo Bar Market',
       text: 'Some info about this market.',

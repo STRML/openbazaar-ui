@@ -8,10 +8,11 @@ module.exports.generateConfig = function generateConfig(env) {
 };
 
 module.exports.common = {
-  root: '/app/',
   api: {
-    host: 'localhost',
-    port: 1234 // input on load? TODO find a way to figure this out
+    protocol: 'ws:',
+    host: '127.0.0.1',
+    port: 1234, // input on load? TODO find a way to figure this out
+    pathname: '/ws'
   },
   websocket: {
     heartbeatExpectationInterval: 10000

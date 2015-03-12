@@ -18,9 +18,9 @@ var Market = module.exports = React.createClass({
     };
   },
 
-  contract(contract) {
+  contract(contract, i) {
     return (
-      <tr>
+      <tr key={i}>
         <td className="title">{contract.item_title}</td>
         <td>
           <div className="short">{contract.item_desc}</div>
@@ -46,8 +46,8 @@ var Market = module.exports = React.createClass({
             <h2>Connected Market</h2>
           </div>
           <div className="col-sm-6 section-controls">
-            <button className="btn btn-sm">Trust Notary</button> 
-            <button className="btn btn-sm text-success"><strong>Trusted Arbiter</strong></button> 
+            <button className="btn btn-sm">Trust Notary</button>
+            <button className="btn btn-sm text-success"><strong>Trusted Arbiter</strong></button>
             <button className="btn btn-primary btn-sm">Send Message</button>
           </div>
         </div>
@@ -83,7 +83,7 @@ var Market = module.exports = React.createClass({
           <div className="col-sm-12">
             <div className="block-shade">
               <div className="form">
-                {market.email ? 
+                {market.email ?
                   <div className="form-group">
                     <div className="row">
                       <div className="col-sm-3">

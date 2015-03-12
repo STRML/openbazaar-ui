@@ -61,7 +61,7 @@ pre {
 
 #content {
   padding: 15px;
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 .wrap {
@@ -139,8 +139,8 @@ pre {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-  margin-top: -15px;
   padding: 0 15px;
+  margin-top: -10px;
   position: fixed;
   left: 50px;
   right: 15px;
@@ -148,7 +148,6 @@ pre {
   background-color: rgba(255, 255, 255, 0.95);
 
   border-bottom: 1px #eee solid;
-  margin-bottom: 15px;
 
   font-size: 16px;
   -webkit-user-select: none;
@@ -213,7 +212,7 @@ pre {
   position: absolute;
   left: 30px;
   right: 30px;
-  margin-top: 45px;
+  margin-top: 60px;
 }
 
 .help-block {

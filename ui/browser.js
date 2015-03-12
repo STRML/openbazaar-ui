@@ -16,7 +16,7 @@ try {
 }
 
 var contentDiv = document.getElementById('content');
-
+settings.api.port = contentDiv.getAttribute('data-ob-port');
 
 
 var app = require('./app').init(initialData, settings);
